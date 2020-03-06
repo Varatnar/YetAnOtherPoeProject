@@ -1,9 +1,23 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
-    await app.listen(3000);
+    const config = app.get(ConfigService);
+
+    const globalPrefix = config.get('globalPrefix');
+    const port = config.get('port');
+
+    app.enableCors(config.get('cors'));
+    app.setGlobalPrefix(globalPrefix);
+
+    await app.listen(port, () => {
+        // eslint-disable-next-line no-console
+        console.log(
+            'Listening at http://localhost:' + port + '/' + globalPrefix,
+        );
+    });
 }
 
 bootstrap();

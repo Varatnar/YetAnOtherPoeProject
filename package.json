@@ -17,17 +17,24 @@
     "scripts": {
         "bootstrap": "lerna bootstrap",
         "format": "yarn lint --fix && prettier --write **/*.{html,scss,json}",
-        "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue"
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
+        "serve:client": "cd apps/client && yarn serve",
+        "serve:api": "cd apps/api && yarn start:dev"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^2.17.0",
         "@typescript-eslint/parser": "^2.17.0",
-        "eslint": "^6.8.0",
+        "@vue/cli-service": "^4.2.3",
+        "eslint": "^5.16.0",
         "eslint-config-prettier": "^6.10.0",
         "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-vue": "^5.0.0",
+        "@vue/eslint-config-prettier": "^5.0.0",
+        "@vue/eslint-config-typescript": "^4.0.0",
         "lerna": "^3.20.2",
         "lint-staged": "^10.0.4",
-        "prettier": "^1.19.1"
+        "prettier": "^1.19.1",
+        "typescript": "^3.8.3"
     },
     "gitHooks": {
         "pre-commit": "lint-staged"

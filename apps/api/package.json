@@ -1,9 +1,10 @@
 {
-    "name": "@yet_an_other_poe_ap/api",
+    "name": "@yet_an_other_poe_app/api",
     "version": "0.0.1",
     "description": "",
     "author": "",
     "license": "MIT",
+    "private": true,
     "scripts": {
         "prebuild": "rimraf dist",
         "build": "nest build",
@@ -28,6 +29,7 @@
         "rxjs": "^6.5.4"
     },
     "devDependencies": {
+        "@hapi/joi": "^17.1.0",
         "@nestjs/cli": "^6.13.2",
         "@nestjs/schematics": "^6.8.1",
         "@nestjs/testing": "^6.10.14",
